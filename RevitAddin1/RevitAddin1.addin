@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Show Version and Wall Types</Text>
+    <Description>Some description for RevitAddin1</Description>
+    <Assembly>RevitAddin1.dll</Assembly>
+    <FullClassName>RevitAddin1.Command</FullClassName>
+    <ClientId>bbb38c2c-f183-433e-a63f-cd082dadfd01</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>Autodesk</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Show Element Details</Text>
+    <Description>Some description for RevitAddin1</Description>
+    <Assembly>RevitAddin1.dll</Assembly>
+    <FullClassName>RevitAddin1.DbElement</FullClassName>
+    <ClientId>213a41ad-3852-498d-8dfc-15d10beada13</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>Autodesk</VendorDescription>
+  </AddIn>
+  <!-- <AddIn Type="Application"> -->
+  <!--   <Name>Application RevitAddin1</Name> -->
+  <!--   <Assembly>RevitAddin1.dll</Assembly> -->
+  <!--   <FullClassName>RevitAddin1.App</FullClassName> -->
+  <!--   <ClientId>b4b877ac-ea8e-4ef7-9c50-f45c525c8f04</ClientId> -->
+  <!--   <VendorId>com.typepad.thebuildingcoder</VendorId> -->
+  <!--   <VendorDescription>Autodesk</VendorDescription> -->
+  <!-- </AddIn> -->
+  <AddIn Type="Command">
+    <Text>Modify Element</Text>
+    <Description>Some description for RevitAddin1</Description>
+    <Assembly>RevitAddin1.dll</Assembly>
+    <FullClassName>RevitAddin1.ElementModification</FullClassName>
+    <ClientId>a8cd8bce-6bf6-4b60-b2e5-7d305ed6cc97</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>Autodesk</VendorDescription>
+  </AddIn>
+</RevitAddIns>
+
