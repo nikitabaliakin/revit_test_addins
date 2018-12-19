@@ -26,20 +26,34 @@ namespace RevitAddin1
             m_rvtApp = rvtUIApp.Application;
             m_rvtDoc = rvtUIDoc.Document;
 
-
+            // save picked wall into variable 
+            Wall currentWall = (Wall)PickObject(rvtUIDoc);
            
 
-      
+            Level level1 = (Level)FindElement(m_rvtDoc, typeof(Level), "Level 2", null);
+            if (level1 != null)
+            {
+                using (Transaction tr = new Transaction(m_rvtDoc))
+                {
+                    tr.Start("Modify wall to lvl2");
+                    currentWall.get_Parameter(BuiltInParameter.WALL_HEIGHT_TYPE).
+                    Set(level1.Id);
+                    tr.Commit();
+                }
+                // Top Constraint 
+                TaskDialog.Show("Wall Change", "Level was changed to Level 2");
+            }
 
             
 
-
+                            
             return Result.Succeeded;
         }
 
         public Element PickObject(UIDocument rvtUIDoc)
         {
-            Reference refPick = rvtUIDoc.Selection.PickObject(ObjectType.Element, "Pick an element");
+            Reference refPick = rvtUIDoc.Selection.PickObject(ObjectType.Element, "Pick an element"); 
+            
             Element element = m_rvtDoc.GetElement(refPick);
             if (element != null)
             {
@@ -62,8 +76,7 @@ namespace RevitAddin1
                 }else{
                 throw new Exception("No such parameter");
             }
-
-
+            
         }
 
         public void ModifyElementPropertiesWall(Element elem)
